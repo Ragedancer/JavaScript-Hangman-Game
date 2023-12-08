@@ -2,18 +2,22 @@
     <head>
         <title>Hangman Game</title>
         <link rel = "stylesheet" href = "https://w3schools.com/w3css/4/w3.css">
+        <div>
+            <script src="scriptsForGame.js"></script>
+        </div>
     </head>
-    <body>
+    <body onload="generateLinesForWord()">
         <header>
             <h2>Hangman - Guess the word, win the game!</h2>
         </header>
         <div>
             <label>Guess the letter!</label>
             <input type="text" id="guessLetter">
-            <button onclick="guessTheLetter()">Guess!</button>
+            <button onclick="confirmValue()">Guess!</button>
         </div>
-        <div>
-            <script src="scriptsForGame.js"></script>
-        </div>
+        <footer>
+            <div id="answerInLines"></div>
+        </footer>
+        
     </body>
 </html>
