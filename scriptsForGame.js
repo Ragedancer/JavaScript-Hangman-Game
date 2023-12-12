@@ -1,4 +1,4 @@
-let word = 'teeth';
+let word;
 let wordsLines = [];
 let guessLetter;
 let answerLines;
@@ -68,7 +68,11 @@ function displayGuessWord(){
     
 }
 
-function generateLinesForWord(){
+async function generateLinesForWord(){
+    const resp = await fetch("https://random-word-api.herokuapp.com/word");
+    const diction = await resp.json();
+    word = diction[0];
+    console.log('Guess word: ', word);
     wrongGuess = 0;
     answerLines = document.getElementById('answerInLines');
     for(const l of word){
