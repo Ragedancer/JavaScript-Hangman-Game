@@ -7,6 +7,7 @@ let wrongGuess;
 
 function confirmValue(){
     let guessLetter = document.getElementById('guessLetter').value;
+    
     console.log('temp word lines, prior to for loop',wordsLines);
     for(let i =0;i<word.length;i++){
          if(guessLetter == word[i]){
@@ -19,7 +20,7 @@ function confirmValue(){
         }
     displayHangman();
     answerLines.innerHTML = displayGuessWord();
-
+    document.getElementById('guessLetter').value = "";
 }
 
 

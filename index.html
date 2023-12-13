@@ -4,7 +4,7 @@
         <link rel = "stylesheet" href = "https://w3schools.com/w3css/4/w3.css">
         <link rel="icon" type="image/x-icon" href="../JavaScript-Hangman-Game/Images/favicon.ico">
         <div>
-            <script src="scriptsForGame.js"></script>
+            <script defer src="scriptsForGame.js"></script>
         </div>
     </head>
     <body onload="generateLinesForWord()" class="w3-container w3-blue w3-center">
@@ -13,7 +13,7 @@
         </header>
         <div class="w3-container w3-orange w3-bar">
             <label>Guess the letter!</label>
-            <input type="text" id="guessLetter" minlength="1" maxlength="1">
+            <input type="text" id="guessLetter" minlength="1" maxlength="1"/>
             <button id="buttonForGuess" onclick="confirmValue()">Guess!</button>
         </div>
         <p id="bodyOutput"></p>
