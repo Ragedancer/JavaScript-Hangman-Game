@@ -1,11 +1,12 @@
 let word;
 let wordsLines = [];
-let guessLetter;
 let answerLines;
 let wrongGuess;
 
+
+
 function confirmValue(){
-    guessLetter = document.getElementById('guessLetter').value;
+    let guessLetter = document.getElementById('guessLetter').value;
     console.log('temp word lines, prior to for loop',wordsLines);
     for(let i =0;i<word.length;i++){
          if(guessLetter == word[i]){
@@ -20,6 +21,7 @@ function confirmValue(){
     answerLines.innerHTML = displayGuessWord();
 
 }
+
 
 function displayHangman(){
     let body = document.getElementById('bodyOutput');
@@ -75,3 +77,14 @@ async function generateLinesForWord(){
     console.log('Generate lines for words', answerLines);
 }
 
+function listenerForClick(){
+    let input = document.getElementById("guessLetter");
+    console.log(input);
+    input.addEventListener("keypress",function(event){
+        if(event.key === "Enter"){
+            event.preventDefault();
+            document.getElementById('buttonForGuess').click();
+        }
+    });
+}
+listenerForClick();
