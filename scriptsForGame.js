@@ -82,7 +82,7 @@ function listenerForClick(){
     console.log(input);
     input.addEventListener("keypress",function(event){
         if(event.key === "Enter"){
-            event.preventDefault();
+            //event.preventDefault();
             document.getElementById('buttonForGuess').click();
         }
     });
