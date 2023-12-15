@@ -72,7 +72,7 @@ function displayHangman(){
 }
 
 function loseGame(){
- alert("You lost the game! The guess word was ",word, " Wanna play again?");
+ alert("You lost the game! The guess word was: " + word + " Wanna play again?");
         location.reload();
     }
 
