@@ -23,7 +23,6 @@ function confirmValue(){
         }
     }
     if(!word.includes(guessLetter)){
-        console.log("Hitting first one",wrongGuess);
             wrongGuess++;
         }
     
@@ -79,46 +78,33 @@ function loseGame(){
 }
 
 function unhideHead(){
-    console.log("am her");
     let head = document.getElementById("head");
-    console.log("before", head,head.classList);
     head.classList.remove("hidden");
-    console.log("after",head,head.classList);
 }
 
 function unhideTorso(){
     let torso = document.getElementById("torso");
-    console.log("before", torso,torso.classList);
     torso.classList.remove("hidden");
-    console.log("after",torso,torso.classList);
 }
 
 function unhideLeftArm(){
     let leftArm = document.getElementById("leftArm");
-    console.log("before", leftArm,leftArm.classList);
     leftArm.classList.remove("hidden");
-    console.log("after",leftArm,leftArm.classList);
 }
 function unhideRightArm(){
     let rightArm = document.getElementById("rightArm");
-    console.log("before", rightArm,rightArm.classList);
     rightArm.classList.remove("hidden");
-    console.log("after",rightArm,rightArm.classList);
 }
 
 function unhideLeftLeg(){
     let leftLeg = document.getElementById("leftLeg");
-    console.log("before", leftLeg,leftLeg.classList);
     leftLeg.classList.remove("hidden");
-    console.log("after",leftLeg,leftLeg.classList);
 }
 
 
 function unhideRightLeg(){
     let rightLeg = document.getElementById("rightLeg");
-    console.log("before", rightLeg,rightLeg.classList);
     rightLeg.classList.remove("hidden");
-    console.log("after",rightLeg,rightLeg.classList);
 }
 
 function displayGuessWord(){
