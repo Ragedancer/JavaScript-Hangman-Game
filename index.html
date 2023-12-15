@@ -1,22 +1,30 @@
 <html>
     <head>
         <title>Hangman Game</title>
-        <link rel = "stylesheet" href = "https://w3schools.com/w3css/4/w3.css">
-        <link rel="icon" type="image/x-icon" href="../JavaScript-Hangman-Game/Images/favicon.ico">
+        <!--<link rel = "stylesheet" href = "https://w3schools.com/w3css/4/w3.css">-->
+        <link rel="stylesheet" href ="stylesheet.css">
+        <link rel="icon" type="image/x-icon" href="../HTML/Images/favicon.ico">
         <div>
             <script defer src="scriptsForGame.js"></script>
         </div>
     </head>
-    <body onload="generateLinesForWord()" class="w3-container w3-blue w3-center">
+    <body id="mainBody" onload="generateLinesForWord()" class="w3-container w3-blue w3-center">
         <header>
             <h2>Hangman - Guess the word, win the game!</h2>
         </header>
-        <div class="w3-container w3-orange w3-bar">
+        <div id="mainBox" class="w3-container w3-orange w3-bar">
             <label>Guess the letter!</label>
             <input type="text" id="guessLetter" minlength="1" maxlength="1"/>
             <button id="buttonForGuess" onclick="confirmValue()">Guess!</button>
+        <div id="bodyOutput">
+            <div id="head" class="hidden"></div>
+            <div id="torso" class="hidden"></div>
+            <div id="leftArm" class="hidden"></div>
+            <div id="rightArm" class="hidden"></div>
+            <div id="leftLeg" class="hidden"></div>
+            <div id="rightLeg" class="hidden"></div>
         </div>
-        <p id="bodyOutput"></p>
+    </div>
     </body>
     <footer>
         <div id="answerInLines"></div>

@@ -1,0 +1,82 @@
+body{
+    background-color:tomato;
+    position: absolute;
+    border:5px solid white;
+    border-style:double;
+    padding:10px;
+    height:50%;
+    width:50%;
+    text-align:center;
+}
+
+h2, label{
+    color:white;
+    text-align:center;
+}
+
+#answerInLines{
+    color:white;
+    font-size:42px;
+}
+
+#mainBody{
+    position:sticky;
+    position:-webkit-sticky;
+}
+
+#bodyOutput{
+    position:absolute;
+}
+
+#head{
+    position:absolute;
+    width:25px;
+    height: 25px;
+    background-color:black;
+    border-radius:50%;
+}
+
+#torso{
+    position: absolute;
+    border:3px solid black;
+    top:25px;
+    left:10px;
+    height:25px;
+}
+
+#leftArm{
+    position: absolute;
+    border:3px solid black;
+    top:30px;
+    height:0px;
+    width:10px;
+}
+#rightArm{
+    position: absolute;
+    border:3px solid black;
+    top:30px;
+    left:11px;
+    height:0px;
+    width:10px;
+}
+#leftLeg{
+    transform:rotate(300deg);
+    position: absolute;
+    border:3px solid black;
+    top:55px;
+    height:0px;
+    width:10px;
+}
+#rightLeg{
+    transform:rotate(240deg);
+    position: absolute;
+    border:3px solid black;
+    top:55px;
+    left:10px;
+    height:0px;
+    width:10px;
+}
+
+.hidden{
+    visibility: hidden;
+}

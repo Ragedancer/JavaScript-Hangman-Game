@@ -6,7 +6,7 @@ let wrongGuess;
 
 
 function confirmValue(){
-    let guessLetter = document.getElementById('guessLetter').value;
+    let guessLetter = document.getElementById('guessLetter').value.toLowerCase();
     
     console.log('temp word lines, prior to for loop',wordsLines);
     for(let i =0;i<word.length;i++){
@@ -25,32 +25,77 @@ function confirmValue(){
 
 
 function displayHangman(){
-    let body = document.getElementById('bodyOutput');
-    let gameOutput;
+    console.log('displayHangman');
     switch (wrongGuess) {
         case 1:
-          gameOutput = "head";
+            console.log('unhideHead');
+            unhideHead();
           break;
           case 2:
-          gameOutput = "head,torso";
+            console.log('unhideTorso');
+            unhideTorso();
           break;
           case 3:
-          gameOutput = "head,torso,arm1";
+            console.log('unhideLeftArm');
+            unhideLeftArm();
           break;
           case 4:
-          gameOutput = "head,torso,arm1,arm2";
+            console.log('unhideRightArm');
+            unhideRightArm();
           break;
           case 5:
-          gameOutput = "head,torso,arm1,arm2,leg1";
+            console.log('unhideLeftLeg');
+            unhideLeftLeg();
           break;
           case 6:
-          gameOutput = "head,toso,arm1,arm2,leg1,leg2";
-          console.log("You lose");
+            console.log('unhideRightLeg');
+            unhideRightLeg();
           break;
-        default:
-          gameOutput = "aint no body yet";
       }
-body.innerHTML = gameOutput;
+}
+
+
+function unhideHead(){
+    console.log("am her");
+    let head = document.getElementById("head");
+    console.log("before", head,head.classList);
+    head.classList.remove("hidden");
+    console.log("after",head,head.classList);
+}
+
+function unhideTorso(){
+    let torso = document.getElementById("torso");
+    console.log("before", torso,torso.classList);
+    torso.classList.remove("hidden");
+    console.log("after",torso,torso.classList);
+}
+
+function unhideLeftArm(){
+    let leftArm = document.getElementById("leftArm");
+    console.log("before", leftArm,leftArm.classList);
+    leftArm.classList.remove("hidden");
+    console.log("after",leftArm,leftArm.classList);
+}
+function unhideRightArm(){
+    let rightArm = document.getElementById("rightArm");
+    console.log("before", rightArm,rightArm.classList);
+    rightArm.classList.remove("hidden");
+    console.log("after",rightArm,rightArm.classList);
+}
+
+function unhideLeftLeg(){
+    let leftLeg = document.getElementById("leftLeg");
+    console.log("before", leftLeg,leftLeg.classList);
+    leftLeg.classList.remove("hidden");
+    console.log("after",leftLeg,leftLeg.classList);
+}
+
+
+function unhideRightLeg(){
+    let rightLeg = document.getElementById("rightLeg");
+    console.log("before", rightLeg,rightLeg.classList);
+    rightLeg.classList.remove("hidden");
+    console.log("after",rightLeg,rightLeg.classList);
 }
 
 function displayGuessWord(){
