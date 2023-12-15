@@ -34,11 +34,11 @@ function confirmValue(){
 
 function checkForWin(){
     if(!wordsLines.includes('_')){
-        if(confirm("You won! Thats dope! Play again?")){
-            location.reload();
+        alert("You won the game! Thats great! Wanna play again?");
+        location.reload();
         }
     }
-}
+
 
 function displayHangman(){
     console.log('displayHangman');
@@ -72,10 +72,10 @@ function displayHangman(){
 }
 
 function loseGame(){
-    if(confirm("You lost the game! Wanna play again?")){
+ alert("You lost the game! The guess word was ",word, " Wanna play again?");
         location.reload();
     }
-}
+
 
 function unhideHead(){
     let head = document.getElementById("head");
