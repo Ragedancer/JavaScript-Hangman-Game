@@ -6,6 +6,7 @@ body{
     padding:10px;
     height:50%;
     width:50%;
+    left:25%;
     text-align:center;
 }
 
@@ -15,8 +16,11 @@ h2, label{
 }
 
 #answerInLines{
+    position:absolute;
     color:white;
     font-size:42px;
+    left:33%;
+    top:50%;
 }
 
 #mainBody{
@@ -26,6 +30,7 @@ h2, label{
 
 #bodyOutput{
     position:absolute;
+    left:50%;
 }
 
 #head{

@@ -2,12 +2,20 @@ let word;
 let wordsLines = [];
 let answerLines;
 let wrongGuess;
+let alreadyGuessed = "";
 
 
 
 function confirmValue(){
     let guessLetter = document.getElementById('guessLetter').value.toLowerCase();
-    
+    if(alreadyGuessed.includes(guessLetter)){
+        alert("This has been guessed");
+        document.getElementById('guessLetter').value = "";
+        return;
+    }
+    else{
+        alreadyGuessed += guessLetter;
+    }
     console.log('temp word lines, prior to for loop',wordsLines);
     for(let i =0;i<word.length;i++){
          if(guessLetter == word[i]){
@@ -18,11 +26,20 @@ function confirmValue(){
         console.log("Hitting first one",wrongGuess);
             wrongGuess++;
         }
+    
     displayHangman();
     answerLines.innerHTML = displayGuessWord();
     document.getElementById('guessLetter').value = "";
+    setTimeout(checkForWin,2000);
 }
 
+function checkForWin(){
+    if(!wordsLines.includes('_')){
+        if(confirm("You won! Thats dope! Play again?")){
+            location.reload();
+        }
+    }
+}
 
 function displayHangman(){
     console.log('displayHangman');
@@ -50,10 +67,16 @@ function displayHangman(){
           case 6:
             console.log('unhideRightLeg');
             unhideRightLeg();
+            setTimeout(loseGame,2000);
           break;
       }
 }
 
+function loseGame(){
+    if(confirm("You lost the game! Wanna play again?")){
+        location.reload();
+    }
+}
 
 function unhideHead(){
     console.log("am her");
