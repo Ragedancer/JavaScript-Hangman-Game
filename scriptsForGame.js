@@ -5,7 +5,11 @@ let wrongGuess;
 let alreadyGuessed = "";
 
 
-
+//When the user presses enter and has a value entered, then this code checks to see if the letter has been guessed.
+//If the letter has been guessed, it returns a message saying that then waits for the user to enter another value
+//Once the value is input, the code checks to see if the letter exists throughout the word, if it does, it replaces the _ with the letter
+//if the letter is not in the word, it increases the wrong score, then we display the hangman based on the wrong score
+//and then we check if the users won
 function confirmValue(){
     let guessLetter = document.getElementById('guessLetter').value.toLowerCase();
     if(alreadyGuessed.includes(guessLetter)){
@@ -31,6 +35,7 @@ function confirmValue(){
     document.getElementById('guessLetter').value = "";
     setTimeout(checkForWin,2000);
 }
+//Code to check if the user won, based on if there are any more underscores in the display field on the page
 
 function checkForWin(){
     if(!wordsLines.includes('_')){
@@ -39,7 +44,7 @@ function checkForWin(){
         }
     }
 
-
+//displays the hangman based on the wrongscore, goes from 0 - 6, starts at 0, then at 6 it shows the last body part and tells the user they lost
 function displayHangman(){
     console.log('displayHangman');
     switch (wrongGuess) {
@@ -71,12 +76,13 @@ function displayHangman(){
       }
 }
 
+//this code doesnt check if the user lost, it just displays that the user lost and reloads the page
 function loseGame(){
  alert("You lost the game! The guess word was: " + word + " Wanna play again?");
         location.reload();
     }
 
-
+//All unhide...() functions remove the class in the html where the value is "hidden", in the CSS hidden is set to hide the div the class is associated to
 function unhideHead(){
     let head = document.getElementById("head");
     head.classList.remove("hidden");
@@ -107,6 +113,7 @@ function unhideRightLeg(){
     rightLeg.classList.remove("hidden");
 }
 
+//Displays the guess word by reading out the values in the wordLines array
 function displayGuessWord(){
     let tempWord = '';
     wordsLines.forEach(l =>{
@@ -118,6 +125,7 @@ function displayGuessWord(){
     
 }
 
+//Runs when body loads, API curl call for word, then generates the lines based on how many letters in word
 async function generateLinesForWord(){
     const resp = await fetch("https://random-word-api.herokuapp.com/word");
     const diction = await resp.json();
@@ -132,6 +140,7 @@ async function generateLinesForWord(){
     console.log('Generate lines for words', answerLines);
 }
 
+//When the user types in a letter, if the user presses enter, clicks the button like the user would
 function listenerForClick(){
     let input = document.getElementById("guessLetter");
     console.log(input);
@@ -142,4 +151,6 @@ function listenerForClick(){
         }
     });
 }
+
+//this runs the listener when the page loads
 listenerForClick();
