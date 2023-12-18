@@ -6,4 +6,5 @@ Repo for making html/vanilla JavaScript hangman game
 
 ## Tools to create game
 [VS Code](https://code.visualstudio.com/)
+
 [W3 Schools](https://www.w3schools.com/)
